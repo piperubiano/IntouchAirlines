@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $conn->query($query);
 
     if ($result->num_rows === 1) {
-        session_start();  // Iniciar la sesión
-        $_SESSION["email"] = $email;  // Guardar el email en la variable de sesión
+        session_start();  
+        $_SESSION["email"] = $email;  
         header("Location: firstpage.php");
         exit();
     }

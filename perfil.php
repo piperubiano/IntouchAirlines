@@ -124,7 +124,6 @@
                 <th>Numero de contacto</th>
                 <th>Edad</th>
                 <th>Email</th>
-                <!-- Agrega más columnas según los campos que tengas en tu tabla -->
             </tr>
             <?php
                 if ($result->num_rows > 0) {

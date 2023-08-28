@@ -1,6 +1,5 @@
 <?php
-
-session_start();  // Iniciar la sesión (debe hacerse antes de acceder a las variables de sesión)
+session_start(); 
 if (isset($_SESSION["email"])) 
     $email = $_SESSION["email"];
 
@@ -16,11 +15,11 @@ if (isset($_SESSION["email"]))
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff; /* Color de fondo (azul claro) */
+            background-color: #f0f8ff;
         }
 
         #header {
-            background-color:rgba(135, 154, 208); /* Color de fondo (verde limón) */
+            background-color:rgba(135, 154, 208); 
             color: white;
             text-align: left;
             padding: 10px;

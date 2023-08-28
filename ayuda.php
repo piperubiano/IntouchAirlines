@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intouch Airlines</title>
     <style>
-        /* Estilos CSS */
+        
         body {
             margin: 0;
             padding: 0;
@@ -14,7 +14,7 @@
         }
 
         #header {
-            background-color:rgba(135, 154, 208); /* Color de fondo (verde limón) */
+            background-color:rgba(135, 154, 208); 
             color: white;
             text-align: left;
             padding: 10px;
@@ -49,7 +49,7 @@
        
         th, td {
         border: 2px solid #000000;
-        background-color: #ffffff; /* Agrego el color de fondo blanco */
+        background-color: #ffffff; 
         text-align: left;
         padding: 8px;
 }

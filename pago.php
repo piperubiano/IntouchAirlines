@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Pago</title>
     <style>
-        /* Estilos CSS */
+        
         body {
             margin: 0;
             padding: 0;
@@ -19,7 +19,7 @@
         }
 
         #header {
-            background-color:rgba(135, 154, 208); /* Color de fondo (verde limón) */
+            background-color:rgba(135, 154, 208);
             color: white;
             text-align: left;
             padding: 10px;
@@ -54,7 +54,7 @@
        
         th, td {
         border: 2px solid #000000;
-        background-color: #ffffff; /* Agrego el color de fondo blanco */
+        background-color: #ffffff;
         text-align: left;
         padding: 8px;
 }
@@ -116,7 +116,7 @@
             <table>
                 <td align="right">
                     <ul style="list-style: none;"> 
-                         <li><label for="nombre_pasajero">Número del pasajero:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <label for="id_pasajero">Identificacion del pasajero:</label> 
+                         <li><label for="nombre_pasajero">Nombre del pasajero:</label>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <label for="id_pasajero">Identificacion del pasajero:</label> 
                          <br><br>
                          <input type="text" id="nombre_pasajero" name="nombre_pasajero" required placeholder="Digite el nombre...">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  <input type="text" id="id_pasajero" name="id_pasajero" required placeholder="digite la identificacion..." oninput="validateCVV(this)"></li>
 
@@ -128,7 +128,7 @@
                             <input type="text" id="nombre" name="nombre" required placeholder="digite el nombre en la tarjeta..."></li>
                         <br><br>
                         <li><label for="fecha">Fecha de Vencimiento:</label>
-                         <input type="text" id="fecha" name="fecha" placeholder="MM/AA" required placeholder="Digite la fecha de vencimiento..." oninput="formatDate(this)"></li>
+                         <input type="text" id="fecha" name="fecha" placeholder="MM/AA" maxlength="4" required placeholder="Digite la fecha de vencimiento..." oninput="formatDate(this)"></li>
                         <input type="hidden" id="fechaFormatted" name="fechaFormatted" value=""></li>
                         <br><br>
                         <li><label for="cvv">CVV:</label>
@@ -151,17 +151,23 @@
         ?>
     </center>
     <script>
-    function formatDate(input) {
-        let value = input.value;
-        value = value.replace(/\D/g, ''); // Elimina caracteres no numéricos
-        if (value.length > 2) {
-            value = value.substr(0, 2) + '/' + value.substr(2);
+      function formatCVV(input) {
+            const cvv = input.value.replace(/\D/g, '');
+            let formattedCVV = cvv;
+
+            if (cvv.length > 2) {
+                formattedCVV = cvv.substr(0, 2) + '/' + cvv.substr(2, 2);
+            }
+
+            document.getElementById('cvvFormatted').value = formattedCVV;
+            input.value = formattedCVV;
         }
-        document.getElementById('fechaFormatted').value = value;
-        input.value = value;
-    }
+
+    document.getElementById('fechaFormatted').value = value;
+    input.value = value;
+    
     function validateCVV(input) {
-        input.value = input.value.replace(/\D/g, ''); // Remover caracteres no numéricos
+        input.value = input.value.replace(/\D/g, ''); 
     }
 </script>
 </body>
